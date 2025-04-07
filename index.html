@@ -1,391 +1,130 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WELCOME GANTENG</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }body {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: white;
-  overflow-x: hidden;
-}
-
-canvas#stars {
-  position: fixed;
-  top: 0; left: 0;
-  z-index: -1;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.4em;
-  color: #00aaff;
-  text-decoration: none;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.6em;
-  cursor: pointer;
-  color: #00aaff;
-}
-
-nav {
-  display: flex;
-  gap: 15px;
-}
-
-nav a {
-  padding: 8px 15px;
-  border-radius: 20px;
-  background: transparent;
-  color: #00aaff;
-  border: 2px solid #00aaff;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-nav a:hover, nav a.active {
-  background: #00aaff;
-  color: white;
-  transform: scale(1.05);
-}
-
-.hidden {
-  display: none;
-}
-
-section {
-  padding: 60px 20px 40px;
-  text-align: center;
-  min-height: 80vh;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s ease-out;
-}
-
-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.home .profile-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 5px solid #00aaff;
-  box-shadow: 0 0 20px #00aaff;
-  overflow: hidden;
-  margin: 90px auto 25px;
-}
-
-.profile-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-h1 span {
-  color: #00aaff;
-}
-
-.typing-text, .typing-desc {
-  font-size: 1.3em;
-  margin-bottom: 15px;
-  min-height: 30px;
-}
-
-.description {
-  max-width: 600px;
-  margin: auto;
-  font-size: 1.1em;
-  color: #ccc;
-  min-height: 50px;
-}
-
-.social-buttons {
-  margin-top: 20px;
-}
-
-.social-buttons a {
-  display: inline-block;
-  margin: 10px 10px 0;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: #00aaff;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.social-buttons a:hover {
-  background-color: #008ecc;
-  transform: scale(1.05);
-}
-
-.section-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #00aaff;
-}
-
-.skills-container, .projects-container {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.skill-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 15px;
-  padding: 10px;
-  background: rgba(255,255,255,0.05);
-  border: 2px solid #00aaff;
-  box-shadow: 0 0 10px #00aaff22;
-  transition: 0.3s;
-}
-
-.skill-icon:hover {
-  transform: scale(1.1);
-}
-
-.project-box {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #00aaff;
-  padding: 20px;
-  border-radius: 15px;
-  width: 250px;
-  box-shadow: 0 0 10px #00aaff22;
-}
-
-footer {
-  text-align: center;
-  padding: 20px 10px 40px;
-  background: rgba(0,0,0,0.3);
-  font-size: 0.9em;
-  color: #aaa;
-  margin-top: -40px;
-}
-
-.music-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #00aaff;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #00aaff;
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.5s ease;
-}
-
-.music-player.playing {
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
-}
-
-@media(max-width: 768px) {
-  nav {
-    flex-direction: column;
-    background: rgba(0,0,0,0.9);
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    display: none;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online dengan WhatsApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+        .price {
+            font-size: 20px;
+            color: #d9534f;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .btn {
+            background-color: #25d366;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #128c7e;
+        }
+    </style>
 </head>
-<body><canvas id="stars"></canvas>
+<body>
 
-<header>
-  <a class="logo">𝗞𝗜𝗡𝗚 𝗣𝗔𝗡𝗗𝗔 𝗚𝗢</a>
-  <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
-  <nav id="navMenu">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header><section id="home" class="home">
-  <div class="profile-img">
-    <img src="https://files.catbox.moe/f38fwf.jpg" alt="Profile" />
-  </div>
-  <h1>Hi, I'm <span>𝗞𝗜𝗡𝗚 𝗣𝗔𝗡𝗗𝗔 𝗚𝗢</span></h1>
-  <div class="typing-text" id="typing-role"></div>
-  <div class="typing-desc" id="typing-desc"></div>
-  <div class="social-buttons">
-    <a href="https://wa.me/6283819042511">WhatsApp</a>
-    <a href="https://t.me/kingpandago">Telegram</a>
-    <a href="https://youtube.com/@kingpandago">YouTube</a>
-  </div>
-</section><section id="skills">
-  <h2 class="section-title">Skills</h2>
-  <div class="skills-container">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash">
-  </div>
-</section><section id="about">
-  <h2 class="section-title">About Me</h2>
-  <p class="description">
-    My Name Is King Panda, I'm Just A Student Who Is Very Interested In Programming, And I'm A WhatsApp Bot Script Developer.
-  </p>
-</section><section id="MENJUAL">
-  <h2 class="section-title">KEBUTUHAN LAINNYA</h2>
-  <div class="projects-container">
-    <div class="project-box">
-      <h3>MENYEDIAKAN KEBUTUHAN HOST</h3>
-      <p>ADMIN PANEL, RESELLER PANEL,PANEL,DLL</p>
+    <!-- Header Toko -->
+    <div class="header">
+        <h1>PANDA SHOP</h1>
     </div>
-  </div>
-</section><section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p class="description">Gmail Me: <b>panda@example.com</b></p>
-</section><footer>
-  © 𝗞𝗜𝗡𝗚 𝗣𝗔𝗡𝗗𝗔 𝗚𝗢 ϟ
-</footer><div class="music-player" onclick="toggleMusic()">
-  <i class="fas fa-music"></i>
-  <audio id="bgMusic" src="https://files.catbox.moe/a5ncoy.mp3" loop autoplay></audio>
-</div><script>
-  const roles = ["Web Developer", "Script Creator", "Attacker", "Defacer"];
-  const desc = "Welcome to my portfolio. My name is KingPandaGo. I'm a Developer, Defacer and Attacker.";
-  let roleIndex = 0, roleChar = 0, descChar = 0;
 
-  function typeRole() {
-    const el = document.getElementById('typing-role');
-    if (roleChar < roles[roleIndex].length) {
-      el.textContent += roles[roleIndex][roleChar++];
-      setTimeout(typeRole, 100);
-    } else {
-      setTimeout(() => {
-        el.textContent = "";
-        roleChar = 0;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typeRole();
-      }, 1500);
-    }
-  }
+    <!-- Kontainer Produk -->
+    <div class="container">
+        <!-- Produk 1 -->
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produk 1">
+            <h3>Produk 1</h3>
+            <p>Deskripsi singkat produk 1</p>
+            <div class="price">Rp 100.000</div>
+            <!-- Tombol WhatsApp -->
+            <a href="https://wa.me/6283191133169" target="_blank">
+                <button class="btn">BELI</button>
+            </a>
+        </div>
 
-  function typeDesc() {
-    const el = document.getElementById('typing-desc');
-    if (descChar < desc.length) {
-      el.textContent += desc[descChar++];
-      setTimeout(typeDesc, 40);
-    }
-  }
+        <!-- Produk 2 -->
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produk 2">
+            <h3>Produk 2</h3>
+            <p>Deskripsi singkat produk 2</p>
+            <div class="price">Rp 150.000</div>
+            <!-- Tombol WhatsApp -->
+            <a href="https://wa.me/6283191133169" target="_blank">
+                <button class="btn">BELI</button>
+            </a>
+        </div>
 
-  function revealOnScroll() {
-    document.querySelectorAll("section").forEach(sec => {
-      const top = sec.getBoundingClientRect().top;
-      if (top < window.innerHeight * 0.85) sec.classList.add("show");
-    });
-  }
+        <!-- Produk 3 -->
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produk 3">
+            <h3>Produk 3</h3>
+            <p>Deskripsi singkat produk 3</p>
+            <div class="price">Rp 200.000</div>
+            <!-- Tombol WhatsApp -->
+            <a href="https://wa.me/6283191133169" target="_blank">
+                <button class="btn">BELI</button>
+            </a>
+        </div>
 
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('show');
-  }
+        <!-- Produk 4 -->
+        <div class="product">
+            <img src="https://files.catbox.moe/1sq3xw.jpeg" alt="Produk 4">
+            <h3>MOD DC3 SPEK KODOK IJO</h3>
+            <p>mod bussid</p>
+            <div class="price">Rp 25.000</div>
+            <!-- Tombol WhatsApp -->
+            <a href="https://wa.me/6283191133169" target="_blank">
+                <button class="btn">BELI</button>
+            </a>
+        </div>
+    </div>
 
-  window.addEventListener("scroll", revealOnScroll);
-  window.addEventListener("load", () => {
-    typeRole();
-    typeDesc();
-    revealOnScroll();
-    setTimeout(() => {
-      music.play().then(() => {
-        musicBtn.classList.add("playing");
-      }).catch(() => {});
-    }, 1000);
-  });
-
-  const canvas = document.getElementById('stars');
-  const ctx = canvas.getContext('2d');
-  let w = canvas.width = window.innerWidth;
-  let h = canvas.height = window.innerHeight;
-
-  const stars = Array(100).fill().map(() => ({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    radius: Math.random() * 1.5,
-    speed: Math.random() * 1 + 0.5
-  }));
-
-  function drawStars() {
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = '#ffffff';
-    stars.forEach(star => {
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-      ctx.fill();
-      star.y += star.speed;
-      if (star.y > h) {
-        star.y = 0;
-        star.x = Math.random() * w;
-      }
-    });
-    requestAnimationFrame(drawStars);
-  }
-
-  drawStars();
-  window.addEventListener('resize', () => {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  });
-
-  const music = document.getElementById("bgMusic");
-  const musicBtn = document.querySelector(".music-player");
-
-  function toggleMusic() {
-    if (music.paused) {
-      music.play();
-      musicBtn.classList.add("playing");
-    } else {
-      music.pause();
-      musicBtn.classList.remove("playing");
-    }
-  }
-</script></body>
+</body>
 </html>
